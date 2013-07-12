@@ -100,7 +100,7 @@ web_app "drupal" do
   template "drupal.conf.erb"
   docroot node['drupal']['dir']
   server_name server_fqdn
-  server_aliases node['fqdn']
+  server_aliases [node['fqdn']]
 end
 
 include_recipe "drupal::cron"
